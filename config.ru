@@ -1,0 +1,3 @@
+require "./doomfaces"
+
+run Doomfaces
