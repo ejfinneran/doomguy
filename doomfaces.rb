@@ -4,6 +4,14 @@ class Doomfaces < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
 
+  get "/" do
+    erb :index
+  end
+
+  get "/application.js" do
+    coffee :application
+  end
+
   get %r{/value/(\d+)} do
     damage = [99, params[:captures].first.to_i].min
     redirect to("/face/#{damage/20}")
