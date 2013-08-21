@@ -4,6 +4,13 @@ class Doomfaces < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
 
+  def file_for_value(value, options = {})
+    damage = [100, value].min
+    damage = 100 - damage if options[:inverse]
+    id = [4, damage/20].min
+    "images/face#{id}.gif"
+  end
+
   get "/" do
     erb :index
   end
@@ -12,15 +19,12 @@ class Doomfaces < Sinatra::Base
     coffee :application
   end
 
-  get %r{/value/(\d+)} do
-    damage = [99, params[:captures].first.to_i].min
-    redirect to("/face/#{damage/20}")
+  get %r{/damage/(\d+).gif} do
+    send_file file_for_value(params[:captures].first.to_i)
   end
 
-  (0..5).to_a.each do |i|
-    get "/face/#{i}" do
-      content_type "image/gif"
-      send_file "images/face#{i}.gif"
-    end
+  get %r{/inverse/(\d+).gif} do
+    send_file file_for_value(params[:captures].first.to_i, inverse: true)
   end
+
 end
