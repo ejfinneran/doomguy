@@ -8,8 +8,10 @@ class Doomfaces < Sinatra::Base
     damage = [100, value].min
     damage = 100 - damage if options[:inverse]
     id = [4, damage/20].min
-    "images/face#{id}.gif"
+    "face#{id}.gif"
   end
+
+  set :public_folder, 'images'
 
   get "/" do
     erb :index
@@ -20,11 +22,11 @@ class Doomfaces < Sinatra::Base
   end
 
   get %r{/damage/(\d+).gif} do
-    send_file file_for_value(params[:captures].first.to_i)
+    redirect to(file_for_value(params[:captures].first.to_i))
   end
 
   get %r{/inverse/(\d+).gif} do
-    send_file file_for_value(params[:captures].first.to_i, inverse: true)
+    redirect to(file_for_value(params[:captures].first.to_i, inverse: true))
   end
 
 end
