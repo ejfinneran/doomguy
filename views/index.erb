@@ -4,34 +4,36 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+    <link href="/styles.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
 
   </head>
   <body>
-    <div class="container">
-	      <div class="header">
-	        <ul class="nav nav-pills pull-right">
-	          <li class="active"><a href="#">Home</a></li>
-	          <li><a href="#">About</a></li>
-	          <li><a href="#">Contact</a></li>
-	        </ul>
-	        <h3 class="text-muted">Project name</h3>
-	      </div>
+    <div style="width: 50%" class="container">
+      <div style="text-align: center" class="well well-lg">
+        <h1>Doom Guy As a Service</h1>
+        <img style="padding: 5%; width: 25%;"  id="face" src="/damage/0.gif"/>
+        <div id="slider"></div>
 
-        <div class="jumbotron">
-          <h1>Doom Guy As a Service</h1>
-          <div id="slider"></div>
-          <img id="face" src="/value/0"/>
-        </div>
+      </div>
+      <div style="text-align: center" class="well well-lg">
+        <h3 id="example">&lt;img src="http://doomguy.io/damage/0.gif"/&gt;<h3>
+      </div>
 
+      <h4>Huh?</h4>
+      Add a little flair to your system health dashboards.  Instead of numbers
+      and graphs (yawn), you can instead use a fun visual indicator.
 
-	      <div class="footer">
-	        <p>&copy; Company 2013</p>
-	      </div>
+      <h4>Credit</h4>
+      <p>Inspired by a Linux CPU monitor that did something similar that I can't find anymore.</p>
 
-	    </div> <!-- /container -->
+    </div> <!-- /container -->
 
+    <div style="padding: 15%" id="footer">
+        <iframe src="http://ghbtns.com/github-btn.html?user=ejfinneran&type=follow&count=true"
+                    allowtransparency="true" frameborder="0" scrolling="0" width="175" height="20"></iframe>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
