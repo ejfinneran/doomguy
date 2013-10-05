@@ -21,6 +21,10 @@ class Doomfaces < Sinatra::Base
     coffee :application
   end
 
+  get "/styles.css" do
+    send_file "views/styles.css"
+  end
+
   get %r{/damage/(\d+).gif} do
     redirect to(file_for_value(params[:captures].first.to_i))
   end

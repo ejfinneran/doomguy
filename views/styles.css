@@ -1,0 +1,31 @@
+body code {
+  font-size: 1.25em;
+  line-height: 2em;
+}
+
+body div#main {
+  width: 50%;
+}
+
+body div#demo {
+  text-align: center;
+  width: 75%;
+}
+
+body div#demo img#face {
+  padding: 5%;
+  width: 10em;
+}
+
+div#damage-buttons {
+  padding: 5%;
+}
+
+div#code-sample {
+  width: 100%;
+  text-align: center;
+}
+
+div#footer {
+  padding: 25%;
+}
